@@ -7,8 +7,8 @@ This repository contains the example of ClearML usage.
 1. Clone the repository using `git clone` command.
 2. Open the terminal and go to the project directory using `cd` command.
 3. Create virtual environment using `python -m venv venv` or
-   `conda create -n venv python=3.10` command. We have used
-   `Python 3.10` during development.
+   `conda create -n venv python=3.10` command. We have used `Python 3.10` during
+   development.
 4. Activate virtual environment using `source venv/bin/activate` or
    `conda activate venv` command.
 5. Install poetry using instructions from
@@ -44,18 +44,49 @@ This repository contains the example of ClearML usage.
 
 ## Setup ClearML server
 
-1. See [installation guide](https://clear.ml/docs/latest/docs/deploying_clearml/clearml_server_linux_mac/) for your platform. If you encounter the `elasticserach` error, try to change the volume for this service to:
+1. See
+   [installation guide](https://clear.ml/docs/latest/docs/deploying_clearml/clearml_server_linux_mac/)
+   for your platform. If you encounter the `elasticserach` error, try to change
+   the volume for this service to:
+
 ```
 - /opt/clearml/elasticsearch/logs:/usr/share/elasticsearch/logs`
 ```
+
 2. Run the docker-compose to start the server
-3. Initialize ClearML client (firstly, you need to install the python dependencies):
-``` 
+3. Initialize ClearML client (firstly, you need to install the python
+   dependencies):
+
+```bash
 clearml-init
+```
+
+4. Run the following command to start the worker:
+
+```bash
+clearml-agent daemon --queue default --foreground
 ```
 
 ## Examples
 
 ### How to start?
 
-TODO
+1. Generate the dataset using the following command:
+
+```bash
+python scripts/01-generate-data.py
+```
+
+2. Create and upload dataset to the ClearML:
+
+```bash
+python scripts/02-create-dataset.py
+```
+
+3. Train & Evaluate the model using the following command:
+
+```bash
+python src/main.py
+```
+
+4. Navigate to the ClearML web interface and see the results.
