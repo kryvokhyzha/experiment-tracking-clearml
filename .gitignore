@@ -152,4 +152,3 @@ configs/*.conf
 
 temp*.py
 kube-config.yaml
-TODO.txt
