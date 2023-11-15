@@ -1,6 +1,6 @@
 # Experiment Tracking ClearML
 
-This repository contains the example of ClearML usage.
+This repository contains the example of `ClearML` usage.
 
 ## Setup python environment
 
@@ -53,8 +53,8 @@ This repository contains the example of ClearML usage.
 - /opt/clearml/elasticsearch/logs:/usr/share/elasticsearch/logs`
 ```
 
-2. Run the docker-compose to start the server
-3. Initialize ClearML client (firstly, you need to install the python
+2. Run the `docker-compose` to start the server
+3. Initialize `ClearML` client (firstly, you need to install the python
    dependencies):
 
 ```bash
@@ -77,7 +77,7 @@ clearml-agent daemon --queue default --foreground
 python scripts/01-generate-data.py
 ```
 
-2. Create and upload dataset to the ClearML:
+2. Create and upload dataset to the `ClearML`:
 
 ```bash
 python scripts/02-create-dataset.py
@@ -89,4 +89,5 @@ python scripts/02-create-dataset.py
 python src/main.py
 ```
 
-4. Navigate to the ClearML web interface and see the results.
+4. Navigate to the `ClearML` web interface and see the results. By default, it
+   is available on `http://localhost:8080`.
