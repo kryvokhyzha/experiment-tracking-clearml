@@ -2,18 +2,7 @@
 
 This repository contains the example of ClearML usage.
 
-## Setup ClearML server
-
-See [installation guide](https://clear.ml/docs/latest/docs/deploying_clearml/clearml_server_linux_mac/) for your platform.
-
-**Important**
-
-If you encounter the `elasticserach` error, try to change the volume for this service to:
-```
-- /opt/clearml/elasticsearch/logs:/usr/share/elasticsearch/logs`
-```
-
-## Setup development environment
+## Setup python environment
 
 1. Clone the repository using `git clone` command.
 2. Open the terminal and go to the project directory using `cd` command.
@@ -52,6 +41,18 @@ If you encounter the `elasticserach` error, try to change the volume for this se
 14. Also, you can run `pre-commit` hooks manually using
     `pre-commit run --all-files` command.
 15. More useful commands you can find in `Makefile`.
+
+## Setup ClearML server
+
+1. See [installation guide](https://clear.ml/docs/latest/docs/deploying_clearml/clearml_server_linux_mac/) for your platform. If you encounter the `elasticserach` error, try to change the volume for this service to:
+```
+- /opt/clearml/elasticsearch/logs:/usr/share/elasticsearch/logs`
+```
+2. Run the docker-compose to start the server
+3. Initialize ClearML client (firstly, you need to install the python dependencies):
+``` 
+clearml-init
+```
 
 ## Examples
 

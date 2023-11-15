@@ -23,6 +23,7 @@ lightgbm = {version = "^4.0.0", optional = false}
 xgboost = {version = "^1.7.6", optional = false}
 catboost = {version = "^1.2", optional = false}
 clearml = {version = "^1.13.2", optional = false}
+clearml-agent = {version = "^1.6.1", optional = false}
 
 [tool.poetry.extras]
 all = [
