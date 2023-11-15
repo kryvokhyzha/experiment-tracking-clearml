@@ -30,6 +30,6 @@ def train_model(X_train, y_train):
     )
 
     # Save the model
-    joblib.dump(model, "../models/best_model.joblib")
+    joblib.dump(model, "models/best_model.joblib")
 
     return model
