@@ -1,23 +1,26 @@
 import importlib.metadata as metadata
 
 from clearml import Task
+
+from src.evaluate import evaluate_model
 from src.prepare import prepare_data
 from src.train import train_model
-from src.evaluate import evaluate_model
 
 
 def main():
     for i in metadata.distributions():
         Task.add_requirements(i.name, i.version)
 
-    Task.init(project_name='KS-scoring', task_name='XGBoost simple example', output_uri=True)
+    Task.init(project_name="KS-scoring", task_name="XGBoost simple example", output_uri=True)
 
     X_train, y_train, X_test, y_test = prepare_data(
-        dataset_id='62ae7c4f5d234427bc61e77d9230ae19', dataset_alias='KS-scoring-example'
+        # dataset_id='62ae7c4f5d234427bc61e77d9230ae19', dataset_alias='KS-scoring-example'
+        dataset_name="KS-scoring-example",
+        dataset_project="KS-scoring",
     )
     model = train_model(X_train=X_train, y_train=y_train)
     evaluate_model(model=model, X_test=X_test, y_test=y_test)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
