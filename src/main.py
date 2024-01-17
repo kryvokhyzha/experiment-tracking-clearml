@@ -14,7 +14,7 @@ def main():
     task = Task.init(
         project_name="KS-scoring",
         task_name="XGBoost simple example",
-        output_uri=True,
+        # output_uri=True,
         auto_connect_frameworks={
             "joblib": False,
         },
