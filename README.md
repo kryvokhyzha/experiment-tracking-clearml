@@ -86,7 +86,7 @@ python scripts/02-create-dataset.py
 3. Train & Evaluate the model using the following command:
 
 ```bash
-python src/main.py
+python scripts/05-run-main.py
 ```
 
 4. Navigate to the `ClearML` web interface and see the results. By default, it
